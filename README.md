@@ -18,7 +18,7 @@ In this assignment, you will explore utilizing autoencoders to identify clusters
 4. Compare and report the plots of the original data and the plots of the latent vectors. How do the various embedding sizes change the quality of clustering? Here we only consider latent embedding size of 10.
 
 5. Try to use a non-zero MSE loss function to replace MSE when training your AE model. Compare the reconstruction Mean Squared Error (MSE) with latent embedding size of 10. Then plot the PCA and t-SNE plots of the reconstructions and latent vectors with original data. What
-clonclusion can you get?
+conclusion can you get?
 
 ## Predicting TF Binding Affinity Using DNA Shape Features
 
@@ -26,15 +26,15 @@ Transcription factor (TF) binding to DNA is governed by two main mechanisms: bas
 
 1. Install the Deep DNAshape package to obtain DNA shape features for the input files Max.txt, Mad.txt, and Myc.txt. Generate a feature vector for “1-mer” sequence model, a feature vector for “2-mer” sequence model and a feature vector for “1-mer+shape” model for each of the datasets corresponding to Mad, Max and Myc.
 
-2. Build L2-regularized multiple linear regression (MLR) models for “1-mer”, “2-mer” and “1-mer+shape” features with 10-fold cross validation. Calculate and report the average R2 (coefficient of determination) for each of these three models across the datasets of Mad, Max and Myc.
+2. Build L2-regularized multiple linear regression (MLR) models for “1-mer”, “2-mer” and “1-mer+shape” features with 10-fold cross validation. Calculate and report the average R^2 (coefficient of determination) for each of these three models across the datasets of Mad, Max and Myc.
 
 3. Generate two plots for a comparison of two different models: one comparing the “1mer” vs. “1mer+shape” and another comparing the “2mer” vs. “1mer+shape” model. Briefly discuss what you have learned from the results.
 
-4. Repeat the process outlined in Q1 for ChIP-seq data (ctcf_bound.fasta and ctcf_unbound.fasta) for the CTCF TF from Mus musculus. Build logistic regression models for the “1-mer”, “2-mer” and “1-mer+shape” features, Plot the ROC curves for each model and calculate the AUC score for each curve. Briefly discuss what you have learned from the results.
+4. Repeat the process outlined in Q1 for ChIP-seq data (ctcf_bound.fasta and ctcf_unbound.fasta) for the CTCF TF from Mus musculus. Build logistic regression models for the “1-mer”, “2-mer” and “1-mer+shape” features, plot the ROC curves for each model and calculate the AUC score for each curve. Briefly discuss what you have learned from the results.
 
 ## Temporal Gene Expression Analysis with LSTMs and FCNNs
 
-Dynamic changes in gene expression, orchestrated by complex internal and external signaling networks, are crucial in determining cellular states and fates. Despite the variability observed at the single-cell level, Raj and Van Oudenaarden (Cell, 2008) highlight that predictable patterns of gene expression emerge over time or across cell populations. In this assignment, you will develop a Long Short-Term Memory (LSTM) network to analyze the temporal dynamics of gene expression data, aiming to capture these temporal dependencies. You will then compare its performance with that of fully connected neural networks (FCNN). This task focuses on the challenge of classifying and predicting gene expression dynamics across various groups of genes.
+Dynamic changes in gene expression, orchestrated by complex internal and external signaling networks, are crucial in determining cellular states and fates. Despite the variability observed at the single-cell level, Raj and Van Oudenaarden (Cell, 2008) highlight that predictable patterns of gene expression emerge over time or across cell populations. In this assignment, you will develop a Long Short-Term Memory (LSTM) network to analyze the temporal dynamics of gene expression data, aiming to capture these temporal dependencies. You will then compare its performance with that of fully connected neural network (FCNN). This task focuses on the challenge of classifying and predicting gene expression dynamics across various groups of genes.
 
 1. Build a Fully Connected Neural Network (FCNN) for Gene Expression Classification: Begin by loading the dynamic gene expression data from gene_expression_data.csv, which comprises 1000 samples, each featuring 10 genes across 20 time steps with normalized expression levels. Your task is to develop an FCNN that can classify gene expression dynamics into two distinct classes as indicated by the 'outcome' column in the dataset—'1' for upregulation and '0' for downregulation. After loading the dataset, divide it into training and testing sets, maintaining a test size of 20%. Design your FCNN to include two dense layers and embark on the training process for a duration of 30 epochs.
 

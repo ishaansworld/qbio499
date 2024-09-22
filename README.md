@@ -1,7 +1,7 @@
 # qbio499
-AI &amp; ML in Biology and Medicine
+Course: AI &amp; ML in Biology and Medicine
 
-Below, I have copied the descriptions provided to complete these projects.
+Below, I have copied the descriptions provided to complete these 3 projects.
 
 ## scRNAseq Auto-Encoder
 
@@ -31,3 +31,15 @@ Transcription factor (TF) binding to DNA is governed by two main mechanisms: bas
 3. Generate two plots for a comparison of two different models: one comparing the “1mer” vs. “1mer+shape” and another comparing the “2mer” vs. “1mer+shape” model. Briefly discuss what you have learned from the results.
 
 4. Repeat the process outlined in Q1 for ChIP-seq data (ctcf_bound.fasta and ctcf_unbound.fasta) for the CTCF TF from Mus musculus. Build logistic regression models for the “1-mer”, “2-mer” and “1-mer+shape” features, Plot the ROC curves for each model and calculate the AUC score for each curve. Briefly discuss what you have learned from the results.
+
+## Temporal Gene Expression Analysis with LSTMs and FCNNs
+
+Dynamic changes in gene expression, orchestrated by complex internal and external signaling networks, are crucial in determining cellular states and fates. Despite the variability observed at the single-cell level, Raj and Van Oudenaarden (Cell, 2008) highlight that predictable patterns of gene expression emerge over time or across cell populations. In this assignment, you will develop a Long Short-Term Memory (LSTM) network to analyze the temporal dynamics of gene expression data, aiming to capture these temporal dependencies. You will then compare its performance with that of fully connected neural networks (FCNN). This task focuses on the challenge of classifying and predicting gene expression dynamics across various groups of genes.
+
+1. Build a Fully Connected Neural Network (FCNN) for Gene Expression Classification: Begin by loading the dynamic gene expression data from gene_expression_data.csv, which comprises 1000 samples, each featuring 10 genes across 20 time steps with normalized expression levels. Your task is to develop an FCNN that can classify gene expression dynamics into two distinct classes as indicated by the 'outcome' column in the dataset—'1' for upregulation and '0' for downregulation. After loading the dataset, divide it into training and testing sets, maintaining a test size of 20%. Design your FCNN to include two dense layers and embark on the training process for a duration of 30 epochs.
+
+2. Model Performance Evaluation and Analysis: Evaluate your FCNN's performance by examining the training and testing accuracy and loss. Discuss any observed issues with the training or testing results and suggest applicable techniques to address them. Justify your choice of techniques.
+
+3. LSTM Model for Temporal Gene Expression Classification: Shift focus to predicting gene expression dynamics by developing an LSTM model that captures temporal dependencies. Load and preprocess the dataset to match the LSTM's expected input shape (num_samples, num_time_steps, num_genes), basing your reshaping on the provided column names, and keep a test size of 20%. Design the LSTM for binary classification, embarking on a training process for a duration of 30 epochs with the goal of surpassing a test accuracy of 0.8.
+
+4. LSTM Model Evaluation and FCNN Comparison: Post-training, evaluate your LSTM model as you do for the Q2. Provide an analysis of the LSTM's results, comparing its performance against the FCNN. Conclude by discussing the implications of your findings and draw conclusions on the effectiveness of LSTM models in capturing temporal gene expression dynamics versus FCNN.
